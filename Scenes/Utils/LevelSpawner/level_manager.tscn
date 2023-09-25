@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://1nxjg4xkiprn"]
+
+[ext_resource type="Script" path="res://Scenes/Utils/LevelSpawner/level_manager.gd" id="1_78mbi"]
+[ext_resource type="PackedScene" uid="uid://dj5wiwn5m0qfp" path="res://Scenes/Utils/Tile/tile.tscn" id="2_cfaav"]
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_78mbi")
+tile_possibilities = Array[PackedScene]([ExtResource("2_cfaav")])
+
+[node name="Tiles" type="Node2D" parent="."]

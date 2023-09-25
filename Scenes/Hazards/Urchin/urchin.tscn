@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgp8ss6v8uyx2"]
+
+[ext_resource type="PackedScene" uid="uid://bxr8ion8wcnpx" path="res://Scenes/Hazards/DamageArea/DamageArea.tscn" id="1_086xv"]
+[ext_resource type="Texture2D" uid="uid://bw6pc4jlbgwcn" path="res://Assets/Characters/Hazards/Urchin/Urchin.png" id="2_6pphi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrrd2"]
+radius = 25.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axigr"]
+
+[node name="Urchin" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="DamageArea" parent="." instance=ExtResource("1_086xv")]
+
+[node name="CollisionShape2D" parent="DamageArea" index="0"]
+shape = SubResource("CircleShape2D_jrrd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("2_6pphi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_axigr")
+
+[editable path="DamageArea"]

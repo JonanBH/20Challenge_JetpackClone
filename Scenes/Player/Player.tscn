@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bluh2ku61w52h"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_31cq6"]
+[ext_resource type="Texture2D" uid="uid://bk3r1uowldiye" path="res://Assets/Characters/Playable/Diver/Diver.png" id="2_y565a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ccsw"]
+size = Vector2(64, 64)
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 2
+script = ExtResource("1_31cq6")
+upwards_force = 500.0
+max_speed = 600.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_y565a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.53674e-07, 0)
+shape = SubResource("RectangleShape2D_5ccsw")

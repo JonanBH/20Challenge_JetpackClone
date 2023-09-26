@@ -8,3 +8,7 @@ script = ExtResource("1_78mbi")
 tile_possibilities = Array[PackedScene]([ExtResource("2_cfaav")])
 
 [node name="Tiles" type="Node2D" parent="."]
+
+[node name="SpeedUpTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]

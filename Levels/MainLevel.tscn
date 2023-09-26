@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnhdeiyjw0cft"]
+[gd_scene load_steps=5 format=3 uid="uid://bnhdeiyjw0cft"]
 
+[ext_resource type="Script" path="res://Levels/MainLevel.gd" id="1_0o5ot"]
 [ext_resource type="PackedScene" uid="uid://bluh2ku61w52h" path="res://Scenes/Player/Player.tscn" id="1_c5us6"]
 [ext_resource type="PackedScene" uid="uid://1nxjg4xkiprn" path="res://Scenes/Utils/LevelSpawner/level_manager.tscn" id="2_1wagt"]
 
@@ -7,15 +8,26 @@
 size = Vector2(2000, 64)
 
 [node name="GameplayLevel" type="Node2D"]
+script = ExtResource("1_0o5ot")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 740)
+position = Vector2(209, 740)
+shape = SubResource("RectangleShape2D_6gijf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(209, -23)
 shape = SubResource("RectangleShape2D_6gijf")
 
 [node name="Player" parent="." instance=ExtResource("1_c5us6")]
 position = Vector2(133, 346)
+upwards_force = 750.0
 max_speed = 550.0
 
 [node name="LevelManager" parent="." instance=ExtResource("2_1wagt")]
+speed = 250.0
+max_speed = 800.0
+acceleration = 50.0
+speed_up_delay = 20.0
+step_distance = 100

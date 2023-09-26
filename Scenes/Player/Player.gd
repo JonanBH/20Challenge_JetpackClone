@@ -9,13 +9,15 @@ signal took_damage
 var is_applying_force : bool = false
 var is_alive : bool = true
 
+@onready var visual = $Visual
+
 func _process(delta):
 	if not is_alive :
 		return
 		
 	if is_applying_force:
 		linear_velocity += Vector2.UP * upwards_force * delta
-	print(is_applying_force)
+
 
 
 func _physics_process(_delta):

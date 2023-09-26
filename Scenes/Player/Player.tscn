@@ -12,7 +12,9 @@ script = ExtResource("1_31cq6")
 upwards_force = 500.0
 max_speed = 600.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual"]
 z_index = 1
 texture_filter = 1
 scale = Vector2(2, 2)
